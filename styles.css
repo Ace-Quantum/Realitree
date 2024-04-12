@@ -1,0 +1,24 @@
+body {
+	margin:0px;
+	padding:0px;
+
+	color: #484848;
+	font-size: 14px;
+	font-family: Circular,"Helvetica Neue",Helvetica,Arial,sans-serif;
+}
+
+div.container {
+    background-color: purple;
+}
+
+#gameplay_region {
+    height: 1000px;
+}
+#controller_region {
+    height: 500px;
+    background-color: blue;
+}
+#feedback_region {
+    height: 500px;
+    background-color: red;
+}
