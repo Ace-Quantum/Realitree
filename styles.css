@@ -22,3 +22,21 @@ div.container {
     height: 500px;
     background-color: red;
 }
+
+.logo {
+    display: inline;
+    font-family: "Micro 5 Charted", sans-serif;
+    font-weight: 400;
+    font-style: normal;
+}
+.logo_icon {
+    height: 50px;
+    width: 50px;
+}
+.node {
+    background-color: black;
+}
+
+.page-header {
+    background-color: aqua;
+}
