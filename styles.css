@@ -23,6 +23,11 @@ div.container {
     background-color: red;
 }
 
+.btn_submit {
+    width: 80%;
+    background-color: #7ED321;
+}
+
 .logo {
     display: inline;
     font-family: "Micro 5 Charted", sans-serif;
@@ -33,15 +38,30 @@ div.container {
     height: 50px;
     width: 50px;
 }
+.input_region {
+    padding: 10px;
+    border-radius: 40px;
+    height: 250px;
+    width: 100%;
+    color: #7ED321;
+    background-color: black;
+}
 .node {
     border-radius: 50%;
-    height: 75px;
-    width: 75px;
+    height: 60px;
+    width: 60px;
     background-color: black;
     color: aqua;
 }
-
+.node_base {
+    border-radius: 50%;
+    display: block;
+    margin: auto;
+    width: 100%;
+    height: 100%;
+}
 
 .page-header {
     background-color: aqua;
 }
+
