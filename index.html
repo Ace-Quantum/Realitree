@@ -19,11 +19,20 @@
     <div class="container overflow-hidden text-center">
         <!-- gameplay area -->
         <section id="gameplay_region" class="row align-items-center justify-content-center gx-5">
-            <section id="controller_region" class="col-4">
+            <section id="controller_region" class="col-4 row align-items-center">
                 <!-- user input area -->
+                <div class="row justify-content-center">
+                    <div class="row">
+                        <textarea id="input" class="input_region"></textarea>
+                    </div>
+                    <hr>
+                    <div class="row justify-content-center">
+                        <button class="btn btn_submit">Execute</button>
+                    </div>
+                </div>
             </section>
 
-            <section id="feedback_region" class="col-8 row align-items-center">
+            <section id="feedback_region" class="col-8 row align-items-center container-fluid">
                 <!-- game area -->
                 <div class="row justify-content-center">
                     <div class="col-1"><div class="card node m-auto">node</div></div>
@@ -49,7 +58,7 @@
                     <div class="col-8"><div class="card node m-auto">node</div></div>
                 </div>
                 <div class="row justify-content-center">
-                    <div class="col-1"><div class="card node m-auto">node</div></div>
+                    <div class="col-8"><div class="card node m-auto"><img class="node_base" src="images/favicon.png"></div></div>
                 </div>
                 <div class="row justify-content-center">
                     <div class="col-8"><div class="card node m-auto">node</div></div>
