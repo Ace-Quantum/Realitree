@@ -1,12 +1,15 @@
 
 
-const temp_btn = document.getElementById('controller_region');
-temp_btn.addEventListener('click', () => {
-    console.log("function listening");
-    const nodes = document.getElementsByClassName('node');
-    console.log(nodes)
+const nodes = document.getElementsByClassName('node');
+let focusedNode;
 
-    for (i in nodes) {
-        nodes.item(i).classList.toggle('d-none');
-    }
-});
+for (let x = 0; x < nodes.length; x++) {
+    nodes.item(x).addEventListener('click', () => {
+        console.log(`node ${x} clicked!`)
+        if (focusedNode) {
+            focusedNode.classList.remove('focused_node');
+        }
+        nodes[x].classList.add('focused_node');
+        focusedNode = nodes[x];
+    })
+}
