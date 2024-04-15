@@ -10,6 +10,9 @@ class RealiTree {
 }
 
 // building a class for our binary trees
+// But this may not be necessary due to the tutorial
+// Not actually having this part.
+// But surely we do need a constructor, yeah?
 class Node {
     constructor(value, element) {
         this.key = value;
@@ -34,5 +37,5 @@ insert(data){
 }
 
 insertNode(node, newNode){
-
+    
 }
