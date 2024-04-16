@@ -6,7 +6,7 @@
 // But surely we do need a constructor, yeah?
 class Node {
     constructor(value, element) {
-        this.key = value;
+        this.data = value;
         this.elem = element;
 
         this.left = this.right = null;
