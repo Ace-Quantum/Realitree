@@ -64,6 +64,50 @@ class RealiTree {
             this.inorder(node.right);
         }
     }
+
+    check_left_height(node){
+        var l_height = 0;
+
+        if (node === null) {
+            return 0;
+        }
+
+        if (node.left !== null) {
+            l_height = this.check_left_height(node.left) + 1;
+        }
+
+        return (l_height)
+    }
+
+    check_right_height(node){
+        var r_height = 0;
+
+        if (node === null) {
+            return 0;
+        }
+
+        if (node.right !== null) {
+            r_height = this.check_right_height(node.right) + 1;
+        }
+
+        return (r_height)
+    }
+
+    check_balance(node){
+
+        if (node === null) {
+            return 0;
+        }
+
+        var left_height = this.check_left_height(node);
+        var right_height = this.check_right_height(node);
+
+        var balance = left_height - right_height;
+
+        return (balance)
+
+    }
+
 }
 
 module.exports = RealiTree;

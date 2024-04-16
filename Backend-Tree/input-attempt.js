@@ -9,5 +9,8 @@ var BST = new RealiTree();
 TreeGen.tree_generation(BST)
 
 BST.insert(args[2], "tree")
+BST.insert(args[3], "tree")
 
 BST.inorder(BST.root);
+console.log("Balance:")
+console.log(BST.check_balance(BST.root))
