@@ -1,42 +1,113 @@
+:root {
+    --color-primary: #5F3A1C;
+    --color-secondary: #7ED321;
+    --color-accent: #B57204;
+    --color-highlight: #B8E986;
+    --color-btns: #F5A623;
+    --color-btns-hover: #B17614;
+    --color-btns-highlight: #F5B64E;
+    --color-info: #0f3c71;
+    --color-info-text: #f9c776;
+    --color-node-inactive: var(--color-primary);
+    --color-node-active: var(--color-accent);
+}
+
 body {
 	margin:0px;
 	padding:0px;
-
+    background-color: var(--color-accent);
 	color: #484848;
 	font-size: 14px;
 	font-family: Circular,"Helvetica Neue",Helvetica,Arial,sans-serif;
 }
 
-div.container {
-    background-color: purple;
+#info_region {
+    border-radius: 0 0 25px 25px;
+    height: 250px;
+    width: 97%;
+    background-color: var(--color-info);
+    color: var(--color-info-text);
 }
-
 #gameplay_region {
     height: 1000px;
 }
 #controller_region {
-    height: 500px;
-    background-color: blue;
+    border-radius: 25px 0 0 25px;
+    height: 750px;
+    background-color: var(--color-secondary);
 }
 #feedback_region {
-    height: 500px;
-    background-color: red;
+    border-radius: 0 25px 25px 0;
+    height: 750px;
+    background-color: var(--color-primary);
+}
+
+.btn_submit {
+    width: 80%;
+    background-color: var(--color-btns);
+    color: var(--color-primary);
+}
+.btn_submit:hover {
+    background-color: var(--color-btns-hover);
+    color: var(--color-highlight);
+}
+.btn_submit:active {
+    background-color: var(--color-btns-hover);
+    box-shadow: 0 0 25px var(--color-btns-highlight);
 }
 
 .logo {
     display: inline;
     font-family: "Micro 5 Charted", sans-serif;
     font-weight: 400;
+    font-size: 55px;
     font-style: normal;
+    color: var(--color-secondary);
 }
 .logo_icon {
     height: 50px;
     width: 50px;
 }
+.input_region {
+    padding: 10px;
+    border-radius: 40px;
+    height: 250px;
+    width: 100%;
+    color: var(--color-primary);
+    background-color: var(--color-highlight);
+}
+
 .node {
-    background-color: black;
+    border-radius: 50%;
+    height: 60px;
+    width: 60px;
+
+}
+.node_inactive {
+    border-style: none;
+    background-color: var(--color-node-inactive);
+}
+.node_active {
+    background-color: var(--color-node-active);
+}
+.node img {
+    border-radius: 50%;
+}
+.node_inactive img {
+    display: none;
+}
+.focused_node {
+    box-shadow: 0 0 15px var(--color-highlight);
+}
+.node_base {
+    border-radius: 50%;
+    display: block;
+    margin: auto;
+    width: 100%;
+    height: 100%;
 }
 
 .page-header {
-    background-color: aqua;
+    background-color: var(--color-primary);
 }
+
