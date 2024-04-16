@@ -106,11 +106,7 @@ class RealiTree {
             return (0);
         }
 
-        if (node.left === null && node.right !== null){
-            return (0);
-        }
-
-        if (node.left !== null && node.right === null){
+        if ((node.left === null && node.right !== null) || (node.left !== null && node.right === null)){
             return (0);
         }
 
@@ -121,19 +117,12 @@ class RealiTree {
         lnum = this.check_full(node.left);
         rnum = this.check_full(node.right);
 
-        if (lnum === 0 && rnum === 1){
+        if ((lnum === 0 && rnum === 1) || (lnum === 1 && rnum === 0)){
             return (0);
         }
 
-        if (lnum === 1 && rnum === 0) {
-            return (0);
-        }
-
-        console.log("from check: True")
         return (1);
-
     }
-
 }
 
 module.exports = RealiTree;

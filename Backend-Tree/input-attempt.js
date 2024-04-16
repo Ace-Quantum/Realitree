@@ -15,10 +15,10 @@ BST.insert(args[2], "tree")
 console.log("Balance:")
 console.log(BST.check_balance(BST.root))
 
-// console.log("Full:")
-// if (BST.check_full(BST.root) === 1){
-//     console.log("True")
-// }
-// else {
-//     console.log("False")
-// }
+console.log("Full:")
+if (BST.check_full(BST.root) === 1){
+    console.log("True")
+}
+else {
+    console.log("False")
+}
