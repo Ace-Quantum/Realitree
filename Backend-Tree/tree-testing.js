@@ -68,24 +68,34 @@ class RealiTree {
         }
     }
 
-    balance_check(node) {
-        if (node === null) {
-            return(0);
+    find_height(node){
+        let height_left = 0;
+        let height_right = 0;
+
+        if (node === null){
+            return (0);
         }
 
-        const height_left = this.find_height(node.left);
-        const height_right = this.find_height(node.right);
-        const balance = Math.abs(height_left - height_right)
+        if (node.left !== null){
+            height_left = this.find_height(node.left) + 1;
+        }
 
-        return(balance)
+        if (node.right !== null){
+            height_right = this.find_height(node.right) + 1;
+        }
 
+        if (height_left > height_right){
+            return (height_left)
+        }
+
+        return (height_right);
     }
 
-    find_height(node) {
-        if (node === null) {
-            return 0;
-        }
-        return Math.max(this.find_height(node.left), this.find_height(node.right) + 1);
+    check_balance(node){
+        let height_left = this.find_height(node.left);
+        let height_right = this.find_height(node.right);
+
+        return (height_left - height_right);
     }
 
     check_full(node){
