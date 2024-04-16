@@ -30,27 +30,56 @@ class RealiTree {
         var newNode = new Node(data, element);
 
         if(this.root === null)
+        {
             this.root = newNode;
+            const rootRender = document.getElementById("root");
+            rootRender.innerHTML = newNode.data;
+            console.log(newNode.data);
+
+        }
         else
+        {
+            console.log(`new node to be inserted: ${newNode.data}`);
             // I have no idea what this.root refers to
             this.insertNode(this.root, newNode);
+        }
     }
     insertNode(node, newNode)
     {
         if(newNode.data < node.data){
             newNode.ID += "_L";
             if(node.left === null)
+            {
+  
                 node.left = newNode;
+                console.log(`Final position of node ${newNode.data}: ${newNode.ID}`)
+                const nodeRender = document.getElementById(newNode.ID);
+                nodeRender.classList.remove("node_inactive");
+                nodeRender.classList.add("node_active");
+                nodeRender.innerHTML = newNode.data;
+            }
             else
+            {
                 this.insertNode(node.left, newNode);
+            }
         }
 
         else{
             newNode.ID += "_R";
             if (node.right === null)
+            {
+
                 node.right = newNode;
+                console.log(`Final position of node ${newNode.data}: ${newNode.ID}`)
+                const nodeRender = document.getElementById(newNode.ID);
+                nodeRender.classList.remove("node_inactive");
+                nodeRender.classList.add("node_active");
+                nodeRender.innerHTML = newNode.data;
+            }
             else
+            {
                 this.insertNode(node.right, newNode);
+            }
         }
     }
     inorder(node)
@@ -96,5 +125,5 @@ const value = document.getElementById('node_value');
 const info = document.getElementById('feedback');
 
 addBtn.addEventListener('click', () => {
-    info.innerHTML = value.value;
+    BST.insert(value.value);
 });
