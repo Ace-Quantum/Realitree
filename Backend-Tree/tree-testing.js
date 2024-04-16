@@ -3,6 +3,9 @@
 // building a class for our binary trees
 // But this may not be necessary due to the tutorial
 // Not actually having this part.
+
+const { tree_generation } = require("./tree-generation");
+
 // But surely we do need a constructor, yeah?
 class Node {
     constructor(value, element) {
@@ -65,46 +68,59 @@ class RealiTree {
         }
     }
 
-    check_left_height(node){
-        var l_height = 0;
-
+    balance_check(node) {
         if (node === null) {
-            return 0;
+            return(0);
         }
 
-        if (node.left !== null) {
-            l_height = this.check_left_height(node.left) + 1;
-        }
+        const height_left = this.find_height(node.left);
+        const height_right = this.find_height(node.right);
+        const balance = Math.abs(height_left - height_right)
 
-        return (l_height)
+        return(balance)
+
     }
 
-    check_right_height(node){
-        var r_height = 0;
-
+    find_height(node) {
         if (node === null) {
             return 0;
         }
-
-        if (node.right !== null) {
-            r_height = this.check_right_height(node.right) + 1;
-        }
-
-        return (r_height)
+        return Math.max(this.find_height(node.left), this.find_height(node.right) + 1);
     }
 
-    check_balance(node){
+    check_full(node){
+        let lnum = 0;
+        let rnum = 0;
 
-        if (node === null) {
-            return 0;
+        if (node === null){
+            return (0);
         }
 
-        var left_height = this.check_left_height(node);
-        var right_height = this.check_right_height(node);
+        if (node.left === null && node.right !== null){
+            return (0);
+        }
 
-        var balance = left_height - right_height;
+        if (node.left !== null && node.right === null){
+            return (0);
+        }
 
-        return (balance)
+        if (node.left === null && node.right === null){
+            return (1);
+        }
+
+        lnum = this.check_full(node.left);
+        rnum = this.check_full(node.right);
+
+        if (lnum === 0 && rnum === 1){
+            return (0);
+        }
+
+        if (lnum === 1 && rnum === 0) {
+            return (0);
+        }
+
+        console.log("from check: True")
+        return (1);
 
     }
 
