@@ -21,7 +21,6 @@ class RealiTree {
         this.root = null;
     }
 
-
     // Helper function to create a new node
     // initializes the node with it's value.
     //      Note to future Ace: update this to allow 
@@ -60,14 +59,11 @@ class RealiTree {
         if(node !== null)
         {
             this.inorder(node.left);
-            console.log(node.key);
+            console.log(node.data);
             console.log(node.elem);
             this.inorder(node.right);
         }
     }
-
-    
-
 }
 
 module.exports = RealiTree;
