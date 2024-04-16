@@ -17,31 +17,21 @@
         <h1 class="logo">Realitree</h1>
     </header>
     <div class="container overflow-hidden text-center">
-        <section class="row align-items-center justify-content-center">
-            <!-- information and instruction area -->
-            <div id="info_region" class="col-12">
-                <h3>Information</h3>
-                    <p>
-                        Your goal is to balance the the binary tree below, and restore order to reality <br/>
-                        You have a few tools to help you do this: <br/>
-                        addTop(value) and addBottom(value) - adds a new node to either the top or bottom of the tree <br/>
-                        checkBalance() - checks the balance of the tree to inform you how far off it is <br/>
-                        
-                    </p>
-            </div>
-        </section>
+        
         <!-- gameplay area -->
         <section id="gameplay_region" class="row align-items-center justify-content-center gx-2">
             <section id="controller_region" class="col-4 row align-items-center">
                 <!-- user input area -->
                 <div class="row justify-content-center">
+                    <div class="row justify-content-center">
+                        <h2 id="feedback"></h2>
+                    </div>
                     <div class="row">
-                        <textarea id="input" class="input_region">
-                        </textarea>
+                        <input id="node_value" type="number" class="input_region">
                     </div>
                     <hr>
                     <div class="row justify-content-center">
-                        <button class="btn btn_submit">Execute</button>
+                        <button id="add_node" class="btn btn_submit">Add node!</button>
                     </div>
                 </div>
             </section>
