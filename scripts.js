@@ -93,6 +93,98 @@ class RealiTree {
             this.inorder(node.right);
         }
     }
+
+    find_height(node){
+        let height_left = 0;
+        let height_right = 0;
+
+        if (node === null){
+            return (0);
+        }
+
+        if (node.left !== null){
+            height_left = this.find_height(node.left) + 1;
+        }
+
+        if (node.right !== null){
+            height_right = this.find_height(node.right) + 1;
+        }
+
+        if (height_left > height_right){
+            return (height_left)
+        }
+
+        return (height_right);
+    }
+
+    check_balance(node){
+        let height_left = this.find_height(node.left);
+        let height_right = this.find_height(node.right);
+
+        return (height_left - height_right);
+    }
+
+    check_full(node){
+        if (node === null){
+            return (1);
+        }
+
+        if (node.left === null && node.right === null){
+            return (1);
+        }
+
+        if (node.left === null && node.right !== null){
+            return (0);
+        }
+
+        if (node.left !== null && node.right === null){
+            return (0);
+        }
+
+        return this.check_full(node.left) && this.check_full(node.right);
+    }
+
+    check_size(node){
+        let size_left = 0;
+        let size_right = 0;
+
+        if (node === null){
+            return(0);
+        }
+
+        if (node.left !== null){
+            size_left = this.check_size(node.left);
+        }
+
+        if (node.right !== null){
+            size_right = this.check_size(node.right)
+        }
+
+        return (size_left + size_right +1);
+    }
+    
+    check_perfect(node){
+        let size_left = 0;
+        let size_right = 0;
+
+        if (node === null){
+            return (0);
+        }
+
+        if (node.left !== null){
+            size_left = this.check_size(node.left);
+        }
+
+        if (node.right !== null){
+            size_right = this.check_size(node.right);
+        }
+
+        if (size_left !== size_right){
+            return (0);
+        }
+
+        return (1);
+    }
 }
 var BST = new RealiTree();
 
@@ -126,4 +218,25 @@ const info = document.getElementById('feedback');
 
 addBtn.addEventListener('click', () => {
     BST.insert(value.value);
+    if (BST.check_balance(BST.root) === 0 && BST.check_full(BST.root) === 1 && BST.check_perfect(BST.root) === 1) {
+        // change body style
+        body = document.querySelector("body");
+        logo = document.getElementById("logo");
+        body.classList.remove('body_disordered');
+        body.classList.add('body_balanced');
+        logo.src = "images/favicon.png";
+        // change controller style
+        let controller = document.getElementById('controller_region');
+        controller.classList.remove('controller_disordered');
+        controller.classList.add('controller_balanced');
+        // change tree_display style
+        let display = document.getElementById('feedback_region');
+        display.classList.remove('feedback_disordered');
+        display.classList.add('feedback_balanced');
+        let nodeList = document.getElementsByClassName('node');
+        for (i = 0; i < nodes.length; i++) {
+            nodes[i].classList.remove('node_inactive');
+            nodes[i].classList.add('node_empty');
+        }
+    }
 });
