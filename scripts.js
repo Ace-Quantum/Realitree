@@ -13,3 +13,11 @@ for (let x = 0; x < nodes.length; x++) {
         focusedNode = nodes[x];
     })
 }
+
+const addBtn = document.getElementById('add_node');
+const value = document.getElementById('node_value');
+const info = document.getElementById('feedback');
+
+addBtn.addEventListener('click', () => {
+    info.innerHTML = value.value;
+});

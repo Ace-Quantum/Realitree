@@ -1,15 +1,24 @@
 :root {
+    /* reality styles */
     --color-primary: #5F3A1C;
     --color-secondary: #7ED321;
     --color-accent: #B57204;
     --color-highlight: #B8E986;
-    --color-btns: #F5A623;
+    --color-btns: #ffbc4d;
     --color-btns-hover: #B17614;
     --color-btns-highlight: #F5B64E;
     --color-info: #0f3c71;
     --color-info-text: #f9c776;
     --color-node-inactive: var(--color-primary);
     --color-node-active: var(--color-accent);
+    /* glitched reality styles */
+    --color-primary-g: #000000;
+    --color-secondary-g: #D0021B;
+    --color-accent-g: #C9C9C9;
+    --color-highlight-g: #043874;
+    --color-btns-g: #f5a623;
+    --color-btns-hover-g: #B17614;
+    --color-btns-highlight-g: #F5B64E;
 }
 
 body {
@@ -71,7 +80,6 @@ body {
 .input_region {
     padding: 10px;
     border-radius: 40px;
-    height: 250px;
     width: 100%;
     color: var(--color-primary);
     background-color: var(--color-highlight);
