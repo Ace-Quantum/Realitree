@@ -3,6 +3,9 @@
 // building a class for our binary trees
 // But this may not be necessary due to the tutorial
 // Not actually having this part.
+
+const { tree_generation } = require("./tree-generation");
+
 // But surely we do need a constructor, yeah?
 class Node {
     constructor(value, element) {
@@ -20,7 +23,6 @@ class RealiTree {
     {
         this.root = null;
     }
-
 
     // Helper function to create a new node
     // initializes the node with it's value.
@@ -60,13 +62,103 @@ class RealiTree {
         if(node !== null)
         {
             this.inorder(node.left);
-            console.log(node.key);
+            console.log(node.data);
             console.log(node.elem);
             this.inorder(node.right);
         }
     }
 
+    find_height(node){
+        let height_left = 0;
+        let height_right = 0;
+
+        if (node === null){
+            return (0);
+        }
+
+        if (node.left !== null){
+            height_left = this.find_height(node.left) + 1;
+        }
+
+        if (node.right !== null){
+            height_right = this.find_height(node.right) + 1;
+        }
+
+        if (height_left > height_right){
+            return (height_left)
+        }
+
+        return (height_right);
+    }
+
+    check_balance(node){
+        let height_left = this.find_height(node.left);
+        let height_right = this.find_height(node.right);
+
+        return (height_left - height_right);
+    }
+
+    check_full(node){
+        if (node === null){
+            return (1);
+        }
+
+        if (node.left === null && node.right === null){
+            return (1);
+        }
+
+        if (node.left === null && node.right !== null){
+            return (0);
+        }
+
+        if (node.left !== null && node.right === null){
+            return (0);
+        }
+
+        return this.check_full(node.left) && this.check_full(node.right);
+    }
+
+    check_size(node){
+        let size_left = 0;
+        let size_right = 0;
+
+        if (node === null){
+            return(0);
+        }
+
+        if (node.left !== null){
+            size_left = this.check_size(node.left);
+        }
+
+        if (node.right !== null){
+            size_right = this.check_size(node.right)
+        }
+
+        return (size_left + size_right +1);
+    }
     
+    check_perfect(node){
+        let size_left = 0;
+        let size_right = 0;
+
+        if (node === null){
+            return (0);
+        }
+
+        if (node.left !== null){
+            size_left = this.check_size(node.left);
+        }
+
+        if (node.right !== null){
+            size_right = this.check_size(node.right);
+        }
+
+        if (size_left !== size_right){
+            return (0);
+        }
+
+        return (1);
+    }
 
 }
 
