@@ -46,6 +46,3 @@ No known bugs at this time.
 [Ace Morton](https://github.com/Ace-Quantum)
 
 [Cody Walenciak](https://github.com/Cody-j-w)
-
-## License
-Public Domain. No copy write protection. 
