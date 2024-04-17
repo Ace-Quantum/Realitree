@@ -41,11 +41,9 @@ of the game is to navigate through the levels designed as various challenges
 No known bugs at this time.
 
 # Authors
-[Jesse Brumley](https://github.com/jessebrumley)\
-
-[Ace Morton](https://github.com/Ace-Quantum)\
-
-[Cody Walenciak](https://github.com/Cody-j-w)\
+[Jesse Brumley](https://github.com/jessebrumley)
+[Ace Morton](https://github.com/Ace-Quantum)
+[Cody Walenciak](https://github.com/Cody-j-w)
 
 # License
 Public Domain. No copy write protection. 
