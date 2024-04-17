@@ -222,21 +222,32 @@ addBtn.addEventListener('click', () => {
         // change body style
         body = document.querySelector("body");
         logo = document.getElementById("logo");
+        container = document.getElementById('container');
+        header = document.getElementById('header');
+        container.classList.remove('container_disordered');
+        header.classList.remove('header_disordered');
+        header.classList.add('header_balanced');
         body.classList.remove('body_disordered');
         body.classList.add('body_balanced');
         logo.src = "images/favicon.png";
         // change controller style
         let controller = document.getElementById('controller_region');
+        let input = document.getElementById('node_value');
         controller.classList.remove('controller_disordered');
         controller.classList.add('controller_balanced');
+        input.classList.remove('input_disordered');
+        input.classList.add('input_balanced');
         // change tree_display style
         let display = document.getElementById('feedback_region');
         display.classList.remove('feedback_disordered');
         display.classList.add('feedback_balanced');
         let nodeList = document.getElementsByClassName('node');
         for (i = 0; i < nodes.length; i++) {
-            nodes[i].classList.remove('node_inactive');
-            nodes[i].classList.add('node_empty');
+            nodeList[i].classList.remove('node_inactive');
+            nodeList[i].classList.add('node_empty');
+            if (nodeList[i].classList.contains('node_active')) {
+                nodeList[i].innerHTML = "<img src='images/favicon.png'>"
+            }
         }
     }
 });
