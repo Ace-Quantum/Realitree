@@ -1,6 +1,6 @@
 <p align="center">
  <img width="100px" src="/images/favicon.png" align="center" alt="Realitree" />
- <h2 align="center"># Realitree</h2>
+ <h2 align="center">Realitree</h2>
 
 A web game created to help with understanding binary trees in a simple way
 that is independant of any particular programming language.
@@ -42,7 +42,9 @@ No known bugs at this time.
 
 ## Authors
 [Jesse Brumley](https://github.com/jessebrumley)
+
 [Ace Morton](https://github.com/Ace-Quantum)
+
 [Cody Walenciak](https://github.com/Cody-j-w)
 
 ## License
