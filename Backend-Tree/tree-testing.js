@@ -117,6 +117,49 @@ class RealiTree {
 
         return this.check_full(node.left) && this.check_full(node.right);
     }
+
+    check_size(node){
+        let size_left = 0;
+        let size_right = 0;
+
+        if (node === null){
+            return(0);
+        }
+
+        if (node.left !== null){
+            size_left = this.check_size(node.left);
+        }
+
+        if (node.right !== null){
+            size_right = this.check_size(node.right)
+        }
+
+        return (size_left + size_right +1);
+    }
+    
+    check_perfect(node){
+        let size_left = 0;
+        let size_right = 0;
+
+        if (node === null){
+            return (0);
+        }
+
+        if (node.left !== null){
+            size_left = this.check_size(node.left);
+        }
+
+        if (node.right !== null){
+            size_right = this.check_size(node.right);
+        }
+
+        if (size_left !== size_right){
+            return (0);
+        }
+
+        return (1);
+    }
+
 }
 
 module.exports = RealiTree;
