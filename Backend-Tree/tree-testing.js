@@ -99,29 +99,23 @@ class RealiTree {
     }
 
     check_full(node){
-        let lnum = 0;
-        let rnum = 0;
-
         if (node === null){
-            return (0);
-        }
-
-        if ((node.left === null && node.right !== null) || (node.left !== null && node.right === null)){
-            return (0);
+            return (1);
         }
 
         if (node.left === null && node.right === null){
             return (1);
         }
 
-        lnum = this.check_full(node.left);
-        rnum = this.check_full(node.right);
-
-        if ((lnum === 0 && rnum === 1) || (lnum === 1 && rnum === 0)){
+        if (node.left === null && node.right !== null){
             return (0);
         }
 
-        return (1);
+        if (node.left !== null && node.right === null){
+            return (0);
+        }
+
+        return this.check_full(node.left) && this.check_full(node.right);
     }
 }
 

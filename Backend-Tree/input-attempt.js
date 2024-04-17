@@ -8,8 +8,13 @@ var BST = new RealiTree();
 
 TreeGen.tree_generation(BST)
 
-BST.insert(args[2], "tree")
-// BST.insert(args[3], "tree")
+BST.insert(3, "tree")
+BST.insert(63, "tree")
+BST.insert(85, "tree")
+BST.insert(47, "tree")
+BST.insert(5, "tree")
+BST.insert(9, "tree")
+
 
 // BST.inorder(BST.root);
 console.log("Balance:")
