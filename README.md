@@ -16,7 +16,7 @@ that is independant of any particular programming language.
 
 # Installation
 Realitree requires no installation and is operated by visiting
-* Link to website goes here
+* <a href="https://ace-quantum.github.io/Realitree/">Click Here to begin</a>
 
 # How to Play
 Using the prompt on the top of the page you can solve problems by entering
